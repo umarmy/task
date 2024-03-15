@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./invetory.db"
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  category    Int
+  price       Decimal
+  quantity    Int
+  supplier_id String
+  supplier    Supplier @relation(fields: [supplier_id], references: [id])
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model Supplier {
+  id         String    @id @default(cuid())
+  name       String
+  email      String
+  phone      String
+  Product    Product[]
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+}
