@@ -6,14 +6,14 @@ export const productSchema = z.object({
     .max(255),
   description: z.string()
     .min(1, 'Description is required'),
-  category: z.number()
+  category: z.string()
     .min(1, 'Category is required'),
   price: z.string()
     .min(1, 'Price is required'),
   quantity: z.string()
     .min(1, 'Quantity is required'),
   supplier_id: z.string()
-    .optional()
+    .min(1, 'Supplier is required')
 });
 
 export const supplierSchema = z.object({

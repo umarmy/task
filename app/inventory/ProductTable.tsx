@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import {
   Table,
   TableBody,
@@ -47,6 +48,7 @@ const ProductTable = ({ searchParams, products }: Props) => {
               }
             </TableHead>
           ))}
+          <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -57,6 +59,11 @@ const ProductTable = ({ searchParams, products }: Props) => {
             <TableCell>{product.price.toFixed(2)}</TableCell>
             <TableCell>{product.quantity}</TableCell>
             <TableCell>{product.created_at.toDateString()}</TableCell>
+            <TableCell>
+              <Link href={`/inventory/${product.id}/edit`}>
+                <Button>View</Button>
+              </Link>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

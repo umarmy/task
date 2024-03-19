@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       description: body.description,
       price: parseFloat(body.price),
       quantity: parseInt(body.quantity),
-      category: body.category,
+      category: parseInt(body.category),
       supplier_id: body.supplier_id,
     }
   })
