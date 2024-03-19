@@ -4,9 +4,8 @@ import {
   Select, SelectContent,
   SelectItem,
   SelectTrigger
-} from '@/components/ui/select'
+} from '@/components/ui/select';
 import { useRouter, useSearchParams } from 'next/navigation';
-import React from 'react'
 
 const ProductFilter = () => {
   const router = useRouter();

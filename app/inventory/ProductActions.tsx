@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
-import ProductFilter from "./ProductFilter"
 import Link from "next/link"
+import ProductFilter from "./ProductFilter"
 
 const ProductActions = () => {
   return (

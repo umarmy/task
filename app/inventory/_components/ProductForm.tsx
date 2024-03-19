@@ -1,16 +1,8 @@
 'use client';
 
 import { productSchema } from "@/app/validationSchema";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Product, Supplier } from "@prisma/client";
-import axios, { CanceledError } from "axios";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form"
-import { z } from "zod";
 import Spinner from "@/components/Spinner";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -18,7 +10,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage
-} from "@/components/ui/form"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -27,6 +20,13 @@ import {
   SelectValue
 } from "@/components/ui/select";
 import apiClient from "@/services/api-client";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Product, Supplier } from "@prisma/client";
+import axios, { CanceledError } from "axios";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import DeleteProductButton from "../[productId]/edit/DeleteProductButton";
 
 type productFormData = z.infer<typeof productSchema>;

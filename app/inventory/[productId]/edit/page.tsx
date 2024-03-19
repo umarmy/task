@@ -1,6 +1,5 @@
-import React from 'react'
-import ProductForm from '../../_components/ProductForm'
 import prisma from '@/prisma/client'
+import ProductForm from '../../_components/ProductForm'
 
 interface Props {
   params: {
